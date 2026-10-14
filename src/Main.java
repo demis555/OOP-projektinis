@@ -1,17 +1,23 @@
-import Character.Warrior;
-import Character.Mage;
-import Character.Archer;
+import Character.Player;
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Warrior warrior = new Warrior("Warrior");
-        Mage mage = new Mage("Mage");
-        Archer Archer = new Archer("Archer");
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.println(warrior.getName() + " - " + warrior.getHealth());
-        System.out.println(mage.getName() + " - " + mage.getHealth());
-        System.out.println(Archer.getName() + " - " + Archer.getHealth());
+        CharacterCreation menu =
+                new CharacterCreation(scanner);
+
+        Player player = menu.createPlayer();
+
+        System.out.println("\nWelcome, " + player.getName() + "!");
+        System.out.println("Health: " + player.getHealth());
+        System.out.println("Attack: " + player.getAttack());
+        System.out.println("Defense: " + player.getDefense());
+        System.out.println("Evasion: " + player.getEvasion());
+
+        scanner.close();
     }
 }

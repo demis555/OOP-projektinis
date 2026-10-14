@@ -6,13 +6,15 @@ public abstract class GameCharacter {
     private int maxHealth;
     private int attack;
     private int defense;
+    private int evasion;
 
-    public GameCharacter(String name, int maxHealth, int attack, int defense) {
+    public GameCharacter(String name, int maxHealth, int attack, int defense, int evasion) {
         this.name = name;
         this.health = maxHealth;
         this.maxHealth = maxHealth;
         this.attack = attack;
         this.defense = defense;
+        this.evasion = evasion;
     }
 
     public void takeDamage(int damage) {
@@ -62,4 +64,6 @@ public abstract class GameCharacter {
     public int getDefense() {
         return defense;
     }
+
+    public int getEvasion() { return evasion;}
 }
